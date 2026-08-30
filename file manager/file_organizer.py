@@ -4,17 +4,21 @@ import shutil
 
 folder = input("Enter the folder path: ")
 
-images_folder = os.path.join(folder, "Images")
-documents_folder = os.path.join(folder, "Documents")
-videos_folder = os.path.join(folder, "Videos")
-music_folder = os.path.join(folder, "Music")
-other_folder = os.path.join(folder, "Others")
+if not os.path.isdir(folder):
+    print("Error. The folder does not exist.")
+else:
+    
+    images_folder = os.path.join(folder, "Images")
+    documents_folder = os.path.join(folder, "Documents")
+    videos_folder = os.path.join(folder, "Videos")
+    music_folder = os.path.join(folder, "Music")
+    other_folder = os.path.join(folder, "Others")
 
-os.makedirs(images_folder, exist_ok=True)
-os.makedirs(documents_folder, exist_ok=True)
-os.makedirs(videos_folder, exist_ok=True)
-os.makedirs(music_folder, exist_ok=True)
-os.makedirs(other_folder, exist_ok=True)
+    os.makedirs(images_folder, exist_ok=True)
+    os.makedirs(documents_folder, exist_ok=True)
+    os.makedirs(videos_folder, exist_ok=True)
+    os.makedirs(music_folder, exist_ok=True)
+    os.makedirs(other_folder, exist_ok=True)
 
 files = os.listdir(folder)
 
